@@ -2,6 +2,7 @@
 
 from csv import reader
 from logging import getLogger
+from pathlib import Path
 
 from is24csv.barrierfree import BarrierFreeRecord
 from is24csv.record import IS24Record
@@ -44,5 +45,7 @@ class CSVFile(tuple):
     @classmethod
     def read(cls, filename, encoding='latin-1', delimiter='|'):
         """Reads in a file."""
-        with open(filename, encoding=encoding, newline='') as csv_file:
+        path = Path(filename)
+
+        with path.open(mode='r', encoding=encoding, newline='') as csv_file:
             return cls(lines_to_records(reader(csv_file, delimiter=delimiter)))
