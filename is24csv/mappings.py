@@ -756,7 +756,7 @@ TYPES = {
     'etage': parse_int,
     'grundstuecksflaeche': parse_float,
     'bebaubar_nach': partial(
-        parse_enum, BebaubarNach, default=BebaubarNach.UNBEKANNT)
+        parse_enum, BebaubarNach, default=BebaubarNach.UNBEKANNT),
     'etagenzahl': parse_int,
     'erbpacht_jahre': parse_int,
     'parkflaechen': parse_int,
