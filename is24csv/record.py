@@ -27,6 +27,9 @@ class IS24Record(tuple):   # pylint: disable=R0904
         if length_is != length_shall:
             raise InvalidRecord(length_is, length_shall)
 
+    def __str__(self):
+        return self.scout_objekt_id
+
     def __getattr__(self, attribute):
         """Returns real estate type-dependent data fields."""
         try:

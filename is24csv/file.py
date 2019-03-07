@@ -42,9 +42,6 @@ def lines_to_records(records):
 class CSVFile(tuple):
     """An IS24 CSV file."""
 
-    def __repr__(self):
-        return 'IS24 CSV file.'
-
     @classmethod
     def read(cls, filename, encoding='latin-1', delimiter='|'):
         """Reads in a file."""
