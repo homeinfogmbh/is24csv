@@ -9,6 +9,7 @@ from is24csv.enumerations import Vermarktungsart
 from is24csv.enumerations import Objektart
 from is24csv.enumerations import Nutzungsart
 from is24csv.enumerations import EmpfohleneNutzung
+from is24csv.enumerations import BebaubarNach
 from is24csv.enumerations import Objektzustand
 from is24csv.enumerations import Heizungsart
 from is24csv.enumerations import Bodenbelag
@@ -627,6 +628,7 @@ ATTRIBUTES = {
     'etage': ETAGE,
     'grundstuecksflaeche': GRUNDSTUECKSFLAECHE,
     'maximalmietdauer': MAXIMALMIETDAUER,
+    'bebaubar_nach': BEBAUBAR_NACH,
     'etagenzahl': ETAGENZAHL,
     'erbpacht_jahre': ERBPACHT_JAHRE,
     'parkflaechen': PARKFLAECHEN,
@@ -753,6 +755,8 @@ TYPES = {
     'flaeche': parse_float,
     'etage': parse_int,
     'grundstuecksflaeche': parse_float,
+    'bebaubar_nach': partial(
+        parse_enum, BebaubarNach, default=BebaubarNach.UNBEKANNT)
     'etagenzahl': parse_int,
     'erbpacht_jahre': parse_int,
     'parkflaechen': parse_int,

@@ -11,6 +11,7 @@ __all__ = [
     'Objektart',
     'Nutzungsart',
     'EmpfohleneNutzung',
+    'BebaubarNach',
     'Objektzustand',
     'Heizungsart',
     'Bodenbelag',
@@ -208,6 +209,15 @@ class EmpfohleneNutzung(Enum):
     WALD = 26
 
 
+class BebaubarNach(Enum):
+    """Construction constraints."""
+
+    UNBEKANNT = 'U'
+    BEBAUUNGSPLAN = 'B'
+    NACHBARBEBAUUNG = 'N'
+    AUSSENGEBIET = 'A'
+
+
 class Objektzustand(Enum):
     """Object state."""
 
@@ -268,7 +278,7 @@ class Erschliessung(Enum):
 
     ERSCHLOSSEN = 'E'
     TEILERSCHLOSSEN = 'T'
-    UNERSCHLOSSEN = 'E'
+    UNERSCHLOSSEN = 'U'
 
 
 class Lageart(Enum):

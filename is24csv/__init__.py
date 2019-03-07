@@ -8,6 +8,7 @@ from is24csv.enumerations import Vermarktungsart
 from is24csv.enumerations import Objektart
 from is24csv.enumerations import Nutzungsart
 from is24csv.enumerations import EmpfohleneNutzung
+from is24csv.enumerations import BebaubarNach
 from is24csv.enumerations import Objektzustand
 from is24csv.enumerations import Heizungsart
 from is24csv.enumerations import Bodenbelag
@@ -38,6 +39,7 @@ __all__ = [
     'Objektart',
     'Nutzungsart',
     'EmpfohleneNutzung',
+    'BebaubarNach',
     'Objektzustand',
     'Heizungsart',
     'Bodenbelag',
