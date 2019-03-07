@@ -30,6 +30,9 @@ def parse_date(string, frmt='%d.%m.%Y', default=None):
     string is present or else returns None.
     """
 
+    if string is None:
+        return default
+
     try:
         return datetime.strptime(string, frmt)
     except ValueError:
@@ -40,6 +43,9 @@ def parse_enum(enum, value, preprocess=None, default=None):
     """Parser factory to parse a string,
     for the respective enumeration type.
     """
+
+    if value is None:
+        return default
 
     if preprocess is not None:
         value = preprocess(value)
@@ -56,6 +62,9 @@ def parse_float(string, default=None):
     return None if no value is present.
     """
 
+    if string is None:
+        return default
+
     try:
         return float(string.replace(',', '.'))
     except ValueError:
@@ -66,6 +75,9 @@ def parse_int(string, default=None):
     """Ensure existence of some value before parsing
     an integer or return None if no value is present.
     """
+
+    if string is None:
+        return default
 
     try:
         return int(string)
