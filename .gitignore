@@ -1,0 +1,10 @@
+build
+.installed_files.txt
+*.pyc
+*~
+*.egg-info
+setup.cfg
+dist
+xsds
+is24lib/restapi/dom/[a-z]*.py
+.buildconfig
