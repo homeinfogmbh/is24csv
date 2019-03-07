@@ -57,7 +57,10 @@ class IS24Record(tuple):   # pylint: disable=R0904
     @property
     def immobilienart(self):
         """Real estate type."""
-        return parse_enum(Immobilienart, self[2], preprocess=parse_int)
+        print('DEBUG:', self[2])
+        enum = parse_enum(Immobilienart, self[2], preprocess=parse_int)
+        print('DEBUG:', enum)
+        return enum
 
     @property
     def scout_objekt_id(self):
