@@ -64,7 +64,7 @@ class Objektkategorie2(Enum):
     TERRASSENWOHNUNG = 40
     ZWEIFAMILIENHAUS = 43
     ANWESEN = 44
-    BAUERNHOF = 54
+    BAUERNHOF = 45
     REITERHOF = 49
     WEINGUT = 52
     BUERO = 60
