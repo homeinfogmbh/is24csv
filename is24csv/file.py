@@ -3,8 +3,8 @@
 from csv import reader
 from logging import getLogger
 
-from is24lib.csv.barrierfree import BarrierFreeRecord
-from is24lib.csv.record import IS24Record
+from is24csv.barrierfree import BarrierFreeRecord
+from is24csv.record import IS24Record
 
 
 __all__ = ['CSVFile']

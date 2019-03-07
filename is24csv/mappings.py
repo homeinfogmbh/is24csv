@@ -2,29 +2,29 @@
 
 from functools import partial
 
-from is24lib.csv.enumerations import Objektkategorie2
-from is24lib.csv.enumerations import Immobilienart
-from is24lib.csv.enumerations import Wohnraumart
-from is24lib.csv.enumerations import Vermarktungsart
-from is24lib.csv.enumerations import Objektart
-from is24lib.csv.enumerations import Nutzungsart
-from is24lib.csv.enumerations import EmpfohleneNutzung
-from is24lib.csv.enumerations import Heizungsart
-from is24lib.csv.enumerations import Bodenbelag
-from is24lib.csv.enumerations import Haustiere
-from is24lib.csv.enumerations import Erschliessung
-from is24lib.csv.enumerations import Lageart
-from is24lib.csv.enumerations import Zulieferung
-from is24lib.csv.enumerations import Geschlecht
-from is24lib.csv.enumerations import ParkplatzStellplatz
-from is24lib.csv.enumerations import Bauphase
-from is24lib.csv.enumerations import Energieausweistyp
-from is24lib.csv.enumerations import Ausstattungsqualitaet
-from is24lib.csv.parsers import parse_bool
-from is24lib.csv.parsers import parse_date
-from is24lib.csv.parsers import parse_enum
-from is24lib.csv.parsers import parse_float
-from is24lib.csv.parsers import parse_int
+from is24csv.enumerations import Objektkategorie2
+from is24csv.enumerations import Immobilienart
+from is24csv.enumerations import Wohnraumart
+from is24csv.enumerations import Vermarktungsart
+from is24csv.enumerations import Objektart
+from is24csv.enumerations import Nutzungsart
+from is24csv.enumerations import EmpfohleneNutzung
+from is24csv.enumerations import Heizungsart
+from is24csv.enumerations import Bodenbelag
+from is24csv.enumerations import Haustiere
+from is24csv.enumerations import Erschliessung
+from is24csv.enumerations import Lageart
+from is24csv.enumerations import Zulieferung
+from is24csv.enumerations import Geschlecht
+from is24csv.enumerations import ParkplatzStellplatz
+from is24csv.enumerations import Bauphase
+from is24csv.enumerations import Energieausweistyp
+from is24csv.enumerations import Ausstattungsqualitaet
+from is24csv.parsers import parse_bool
+from is24csv.parsers import parse_date
+from is24csv.parsers import parse_enum
+from is24csv.parsers import parse_float
+from is24csv.parsers import parse_int
 
 
 __all__ = ['ATTRIBUTES', 'TYPES']
@@ -761,7 +761,7 @@ TYPES = {
     'abriss_erforderlich': parse_bool,
     'heizungsart': partial(
         parse_enum, Heizungsart, preprocess=parse_int,
-        default=Heizungsart.KEINE_ANGABE)
+        default=Heizungsart.KEINE_ANGABE),
     'grz': parse_float,
     'aufzug': parse_bool,
     'gfz': parse_float,

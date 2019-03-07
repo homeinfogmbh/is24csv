@@ -4,7 +4,7 @@ from functools import lru_cache
 
 from functoolsplus import coerce
 
-from is24lib.csv.record import IS24Record
+from is24csv.record import IS24Record
 
 
 __all__ = ['BarrierFreeRecord']

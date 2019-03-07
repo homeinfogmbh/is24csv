@@ -1,14 +1,12 @@
 """IS24 CSV record DOM."""
 
-from is24lib.csv.attachment import Attachment
-from is24lib.csv.enumerations import Immobilienart
-from is24lib.csv.exceptions import InvalidRecord
-from is24lib.csv.mappings import ATTRIBUTES
-from is24lib.csv.mappings import TYPES
-from is24lib.csv.parsers import parse_bool
-from is24lib.csv.parsers import parse_enum
-from is24lib.csv.parsers import parse_float
-from is24lib.csv.parsers import parse_int
+from is24csv.attachment import Attachment
+from is24csv.enumerations import Immobilienart
+from is24csv.exceptions import InvalidRecord
+from is24csv.mappings import ATTRIBUTES
+from is24csv.mappings import TYPES
+from is24csv.parsers import parse_enum
+from is24csv.parsers import parse_int
 
 
 __all__ = ['IS24Record']
