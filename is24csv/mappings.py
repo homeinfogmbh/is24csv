@@ -9,6 +9,7 @@ from is24csv.enumerations import Vermarktungsart
 from is24csv.enumerations import Objektart
 from is24csv.enumerations import Nutzungsart
 from is24csv.enumerations import EmpfohleneNutzung
+from is24csv.enumerations import Objektzustand
 from is24csv.enumerations import Heizungsart
 from is24csv.enumerations import Bodenbelag
 from is24csv.enumerations import Haustiere
@@ -758,7 +759,9 @@ TYPES = {
     'sonstige_flaechen': parse_float,
     'baujahr': parse_int,
     'baugenehmigung_vorhanden': parse_bool,
-    'objektzustand': parse_int,
+    'objektzustand': partial(
+        parse_enum, Objektzustand, preprocess=parse_int,
+        default=Objektzustand.KEINE_ANGABE),
     'abriss_erforderlich': parse_bool,
     'heizungsart': partial(
         parse_enum, Heizungsart, preprocess=parse_int,

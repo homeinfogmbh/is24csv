@@ -11,6 +11,7 @@ __all__ = [
     'Objektart',
     'Nutzungsart',
     'EmpfohleneNutzung',
+    'Objektzustand',
     'Heizungsart',
     'Bodenbelag',
     'Haustiere',
@@ -205,6 +206,23 @@ class EmpfohleneNutzung(Enum):
     STELLPLAETZE = 24
     VILLA = 25
     WALD = 26
+
+
+class Objektzustand(Enum):
+    """Object state."""
+
+    KEINE_ANGABE = 0
+    ERSTBEZUG = 1
+    NEUWERTIG = 2
+    VOLLSTAENDIG_RENOVIERT = 3
+    RENOVIERUNGSBEDUERFTIG = 4
+    MODERNISIERT = 5
+    NACH_VEREINBARUNG = 6
+    GEPFLEGT = 7
+    ERSTBEZUG_NACH_SANIERUNG = 8
+    SANIERT = 9
+    UNRENOVIERT = 10
+    ABBRUCHREIF = 11
 
 
 class Heizungsart(Enum):
