@@ -18,6 +18,7 @@ from is24csv.enumerations import Zulieferung
 from is24csv.enumerations import Geschlecht
 from is24csv.enumerations import ParkplatzStellplatz
 from is24csv.enumerations import Bauphase
+from is24csv.enumerations import Befeuerungsart
 from is24csv.enumerations import Energieausweistyp
 from is24csv.enumerations import Ausstattungsqualitaet
 from is24csv.parsers import parse_bool
@@ -824,7 +825,9 @@ TYPES = {
     'bauphase': partial(
         parse_enum, Bauphase, preprocess=parse_int,
         default=Bauphase.KEINE_ANGABE),
-    'befeuerungsart': parse_int,
+    'befeuerungsart': partial(
+        parse_enum, Befeuerungsart, preprocess=parse_int,
+        default=Befeuerungsart.KEINE_ANGABE),
     'energieausweistyp': partial(
         parse_enum, Energieausweistyp, preprocess=parse_int,
         default=Energieausweistyp.KEINE_ANGABE),

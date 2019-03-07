@@ -17,6 +17,7 @@ from is24csv.enumerations import Zulieferung
 from is24csv.enumerations import Geschlecht
 from is24csv.enumerations import ParkplatzStellplatz
 from is24csv.enumerations import Bauphase
+from is24csv.enumerations import Befeuerungsart
 from is24csv.enumerations import Energieausweistyp
 from is24csv.enumerations import Ausstattungsqualitaet
 from is24csv.exceptions import InvalidRecord
@@ -45,5 +46,6 @@ __all__ = [
     'Geschlecht',
     'ParkplatzStellplatz',
     'Bauphase',
+    'Befeuerungsart',
     'Energieausweistyp',
     'Ausstattungsqualitaet']

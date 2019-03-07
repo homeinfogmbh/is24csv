@@ -20,6 +20,7 @@ __all__ = [
     'Geschlecht',
     'ParkplatzStellplatz',
     'Bauphase',
+    'Befeuerungsart',
     'Energieausweistyp',
     'Ausstattungsqualitaet']
 
@@ -300,6 +301,20 @@ class Bauphase(Enum):
     HAUS_IN_PLANUNG = 2
     HAUS_IM_BAU = 3
     HAUS_FERTIG_GESTELLT = 4
+
+
+class Befeuerungsart(Enum):
+    """Firing type."""
+
+    KEINE_ANGABE = 1
+    ERDWAERME = 2
+    SOLARHEIZUNG = 3
+    PELLETHEIZUNG = 4
+    GAS = 5
+    OEL = 6
+    FERNWAERME = 7
+    STROM = 8
+    KOHLE = 9
 
 
 class Energieausweistyp(Enum):
