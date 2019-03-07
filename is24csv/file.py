@@ -42,7 +42,7 @@ def lines_to_records(records):
 class CSVFile(tuple):
     """An IS24 CSV file."""
 
-    def __str__(self):
+    def __repr__(self):
         return 'IS24 CSV file.'
 
     @classmethod
