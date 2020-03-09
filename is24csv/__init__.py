@@ -52,4 +52,5 @@ __all__ = [
     'Bauphase',
     'Befeuerungsart',
     'Energieausweistyp',
-    'Ausstattungsqualitaet']
+    'Ausstattungsqualitaet'
+]

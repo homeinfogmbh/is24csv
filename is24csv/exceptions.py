@@ -16,5 +16,5 @@ class InvalidRecord(Exception):
 
     def __str__(self):
         """Returns a human readable string."""
-        return 'Expected {} columns, but got {}.'.format(
-            self.length_shall, self.length_is)
+        return f'Expected {self.length_shall} columns' \
+            f', but got {self.length_is}.'

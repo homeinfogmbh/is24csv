@@ -8,7 +8,8 @@ __all__ = [
     'parse_date',
     'parse_enum',
     'parse_float',
-    'parse_int']
+    'parse_int'
+]
 
 
 def parse_bool(string, true='J', false='N', default=None):

@@ -24,7 +24,8 @@ __all__ = [
     'Bauphase',
     'Befeuerungsart',
     'Energieausweistyp',
-    'Ausstattungsqualitaet']
+    'Ausstattungsqualitaet'
+]
 
 
 class Immobilienart(Enum):
