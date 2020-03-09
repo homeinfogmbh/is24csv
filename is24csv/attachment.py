@@ -1,10 +1,16 @@
 """Attachments DOM."""
 
-from collections import namedtuple
+from typing import NamedTuple
 
 
 __all__ = ['Attachment']
 
 
-FIELDS = ('title', 'filename', 'suffix', 'filetype', 'playtime')
-Attachment = namedtuple('Attachment', FIELDS)
+class Attachment(NamedTuple):
+    """Represents a real estate attachment."""
+
+    title: str
+    filename: str
+    suffix: str
+    filetype: str
+    playtime: int
