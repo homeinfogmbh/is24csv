@@ -1,5 +1,7 @@
 """IS24 CSV parser."""
 
+from typing import Union
+
 from is24csv.attachment import Attachment
 from is24csv.barrierfree import BarrierFreeRecord
 from is24csv.enumerations import Immobilienart
@@ -33,6 +35,7 @@ __all__ = [
     'CSVFile',
     'IS24Record',
     'BarrierFreeRecord',
+    'Record',
     'Attachment',
     'Immobilienart',
     'Objektkategorie2',
@@ -56,3 +59,6 @@ __all__ = [
     'Energieausweistyp',
     'Ausstattungsqualitaet'
 ]
+
+
+Record = Union[IS24Record, BarrierFreeRecord]
