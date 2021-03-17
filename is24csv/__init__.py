@@ -1,5 +1,6 @@
 """IS24 CSV parser."""
 
+from is24csv.attachment import Attachment
 from is24csv.barrierfree import BarrierFreeRecord
 from is24csv.enumerations import Immobilienart
 from is24csv.enumerations import Objektkategorie2
@@ -32,6 +33,7 @@ __all__ = [
     'CSVFile',
     'IS24Record',
     'BarrierFreeRecord',
+    'Attachment',
     'Immobilienart',
     'Objektkategorie2',
     'Wohnraumart',
