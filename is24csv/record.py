@@ -1,5 +1,7 @@
 """IS24 CSV record DOM."""
 
+from typing import Any, Dict
+
 from is24csv.attachment import Attachment
 from is24csv.enumerations import Immobilienart
 from is24csv.exceptions import InvalidRecord
@@ -288,7 +290,8 @@ class IS24Record(tuple):   # pylint: disable=R0904
             title = self[index+4]
             yield Attachment(title, filename, suffix, filetype, playtime)
 
-    def map(self, type_index_map, default=None):
+    def map(self, type_index_map: Dict[Immobilienart, int], *,
+            default: Any = None) -> Any:
         """Takes a real estate type → index map and returns the
         respective value for the current real estate type.
         """
