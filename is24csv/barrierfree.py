@@ -1,9 +1,5 @@
 """Barrier free extension."""
 
-from functools import lru_cache
-
-from functoolsplus import coerce
-
 from is24csv.record import IS24Record
 
 
@@ -85,8 +81,6 @@ class BarrierFreeRecord(IS24Record, columns=210):   # pylint: disable=R0904
         return bool(self[190])
 
     @property
-    @lru_cache()
-    @coerce(frozenset)
     def _balkon_details(self):
         """Generator für Balkon-Details."""
         for code in self[192].split():
