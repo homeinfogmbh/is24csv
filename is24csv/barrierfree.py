@@ -10,12 +10,10 @@ from is24csv.record import IS24Record
 __all__ = ['BarrierFreeRecord']
 
 
-class BarrierFreeRecord(IS24Record):    # pylint: disable=R0904
+class BarrierFreeRecord(IS24Record, columns=210):   # pylint: disable=R0904
     """Extended record with barrier freeness details.
     Properties are partially documented in German.
     """
-
-    COLUMNS = 210
 
     @property
     def keine_stufen_wohnung(self):

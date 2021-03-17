@@ -13,8 +13,8 @@ __all__ = ['CSVFile']
 
 LOGGER = getLogger('IS24CSV')
 RECORDS = {
-    IS24Record.COLUMNS: IS24Record,
-    BarrierFreeRecord.COLUMNS: BarrierFreeRecord
+    IS24Record.columns: IS24Record,
+    BarrierFreeRecord.columns: BarrierFreeRecord
 }
 
 

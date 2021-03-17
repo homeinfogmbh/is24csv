@@ -17,17 +17,21 @@ __all__ = ['IS24Record']
 class IS24Record(tuple):   # pylint: disable=R0904
     """A single line of an IS24 CSV file."""
 
-    COLUMNS = 182
-    GRPSEP = ';'
+    columns = 182
+    grpsep = ';'
 
     def __init__(self, _):
         """Checks the column count."""
         super().__init__()
-        length_is = len(self)
-        length_shall = type(self).COLUMNS
+        length = len(self)
 
-        if length_is != length_shall:
-            raise InvalidRecord(length_is, length_shall)
+        if length != self.columns:
+            raise InvalidRecord(length, self.columns)
+
+    def __init_subclass__(cls, columns: int = 182, grpsep: str = ';'):
+        """Sets column count and group separator."""
+        cls.columns = columns
+        cls.grpsep = grpsep
 
     def __str__(self):
         """Returns the record's ID."""
@@ -100,7 +104,7 @@ class IS24Record(tuple):   # pylint: disable=R0904
     @property
     def gruppen_ids(self):
         """Yields group identifiers."""
-        for ident in self[10].split(type(self).GRPSEP):
+        for ident in self[10].split(self.grpsep):
             ident = ident.strip()
 
             if ident:
