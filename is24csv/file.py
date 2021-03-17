@@ -24,7 +24,7 @@ def line_to_record(record):
     try:
         record_class = RECORDS[len(record)]
     except KeyError:
-        raise ValueError(f'Not a valid IS24 CSV record: {record}.')
+        raise ValueError(f'Not a valid IS24 CSV record: {record}.') from None
 
     return record_class(record)
 
