@@ -38,7 +38,7 @@ class IS24Record(tuple):   # pylint: disable=R0904
         try:
             mapping = ATTRIBUTES[attribute]
         except KeyError:
-            raise AttributeError(attribute)
+            raise AttributeError(attribute) from None
 
         try:
             type_ = TYPES[attribute]
