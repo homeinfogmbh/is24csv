@@ -1,6 +1,8 @@
 """Data parsing functions."""
 
 from datetime import datetime
+from enum import Enum, EnumMeta
+from typing import Any, Callable, Optional
 
 
 __all__ = [
@@ -12,7 +14,8 @@ __all__ = [
 ]
 
 
-def parse_bool(string, true='J', false='N', default=None):
+def parse_bool(string: str, *, true: str = 'J', false: str = 'N',
+               default: Any = None) -> Optional[bool]:
     """Derives a boolean value from string if string
     is present or else returns None as not applicable.
     """
@@ -26,7 +29,8 @@ def parse_bool(string, true='J', false='N', default=None):
     return default
 
 
-def parse_date(string, frmt='%d.%m.%Y', default=None):
+def parse_date(string: str, *, frmt: str = '%d.%m.%Y',
+               default: Any = None) -> Optional[datetime]:
     """Derives a date value from string if
     string is present or else returns None.
     """
@@ -40,7 +44,9 @@ def parse_date(string, frmt='%d.%m.%Y', default=None):
         return default
 
 
-def parse_enum(enum, value, preprocess=None, default=None):
+def parse_enum(enum: EnumMeta, value: str, *,
+               preprocess: Optional[Callable] = None,
+               default: Any = None) -> Enum:
     """Parser factory to parse a string,
     for the respective enumeration type.
     """
@@ -57,7 +63,7 @@ def parse_enum(enum, value, preprocess=None, default=None):
         return default
 
 
-def parse_float(string, default=None):
+def parse_float(string: str, *, default: Any = None) -> Optional[float]:
     """Fix comma as decimal point and ensure existence
     of some value before actually parsing a float or
     return None if no value is present.
@@ -72,7 +78,7 @@ def parse_float(string, default=None):
         return default
 
 
-def parse_int(string, default=None):
+def parse_int(string: str, *, default: Any = None) -> Optional[int]:
     """Ensure existence of some value before parsing
     an integer or return None if no value is present.
     """
