@@ -11,7 +11,7 @@ from is24csv.parsers import parse_enum
 from is24csv.parsers import parse_int
 
 
-__all__ = ['IS24Record']
+__all__ = ['CSVRecord', 'IS24Record']
 
 
 class CSVRecord(tuple):

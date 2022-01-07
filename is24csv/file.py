@@ -1,11 +1,13 @@
 """IS24 CSV file DOM."""
 
+from __future__ import annotations
 from csv import reader
 from logging import getLogger
 from pathlib import Path
+from typing import Iterator
 
 from is24csv.barrierfree import BarrierFreeRecord
-from is24csv.record import IS24Record
+from is24csv.record import CSVRecord, IS24Record
 
 
 __all__ = ['CSVFile']
@@ -18,7 +20,7 @@ RECORDS = {
 }
 
 
-def line_to_record(record):
+def line_to_record(record: tuple[str]) -> CSVRecord:
     """Converts a CSV file line into a record object."""
 
     try:
@@ -29,7 +31,7 @@ def line_to_record(record):
     return record_class(record)
 
 
-def lines_to_records(records):
+def lines_to_records(records: Iterator[tuple[str]]) -> Iterator[CSVRecord]:
     """Yields records."""
 
     for record in records:
@@ -43,9 +45,11 @@ class CSVFile(tuple):
     """An IS24 CSV file."""
 
     @classmethod
-    def read(cls, filename, encoding='latin-1', delimiter='|'):
+    def read(cls,
+             filename: Path, *,
+             encoding: str = 'latin-1',
+             delimiter: str = '|'
+        ) -> CSVFile:
         """Reads in a file."""
-        path = Path(filename)
-
-        with path.open(mode='r', encoding=encoding, newline='') as csv_file:
-            return cls(lines_to_records(reader(csv_file, delimiter=delimiter)))
+        with filename.open(mode='r', encoding=encoding, newline='') as file:
+            return cls(lines_to_records(reader(file, delimiter=delimiter)))
