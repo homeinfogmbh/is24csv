@@ -14,30 +14,30 @@ from is24csv.parsers import parse_int
 __all__ = ['IS24Record']
 
 
-class IS24Record(tuple):   # pylint: disable=R0904
+class CSVRecord(tuple):
     """A single line of an IS24 CSV file."""
-
-    columns = 182
-    grpsep = ';'
 
     def __init__(self, _):
         """Checks the column count."""
         super().__init__()
-        length = len(self)
 
-        if length != self.columns:
+        if (length := len(self)) != self.columns:
             raise InvalidRecord(length, self.columns)
 
-    def __init_subclass__(cls, columns: int = 182, grpsep: str = ';'):
+    def __init_subclass__(cls, *, grpsep: str = ';', columns: int):
         """Sets column count and group separator."""
-        cls.columns = columns
         cls.grpsep = grpsep
+        cls.columns = columns
+
+
+class IS24Record(CSVRecord, columns=182):   # pylint: disable=R0904
+    """A single line of an IS24 CSV file."""
 
     def __str__(self):
         """Returns the record's ID."""
         return self.anbieter_id
 
-    def __getattr__(self, attribute):
+    def __getattr__(self, attribute: str) -> Any:
         """Returns real estate type-dependent data fields."""
         try:
             mapping = ATTRIBUTES[attribute]
