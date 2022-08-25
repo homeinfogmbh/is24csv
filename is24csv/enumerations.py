@@ -28,7 +28,7 @@ __all__ = [
 ]
 
 
-class Immobilienart(Enum):
+class Immobilienart(int, Enum):
     """Real estate type."""
 
     WOHNUNG_MIETE = 0
@@ -47,7 +47,7 @@ class Immobilienart(Enum):
     GARAGE_STELLPLATZ_KAUF = 18
 
 
-class Objektkategorie2(Enum):
+class Objektkategorie2(int, Enum):
     """Object category."""
 
     KEINE_ANGABE = 0
@@ -140,7 +140,7 @@ class Objektkategorie2(Enum):
     BUERO_UND_GESCHAEFTSGEBAEUDE = 139
 
 
-class Wohnraumart(Enum):
+class Wohnraumart(int, Enum):
     """Living space type."""
 
     ZIMMER = 0
@@ -149,7 +149,7 @@ class Wohnraumart(Enum):
     HAUS = 3
 
 
-class Vermarktungsart(Enum):
+class Vermarktungsart(str, Enum):
     """Marketing types."""
 
     KAUF = 'K'
@@ -158,7 +158,7 @@ class Vermarktungsart(Enum):
     PACHT = 'P'
 
 
-class Objektart(Enum):
+class Objektart(int, Enum):
     """Object type."""
 
     KEINE_ANGABE = 0
@@ -170,7 +170,7 @@ class Objektart(Enum):
     DUPLEX = 134
 
 
-class Nutzungsart(Enum):
+class Nutzungsart(int, Enum):
     """Usage type."""
 
     WOHNEN = 56
@@ -179,7 +179,7 @@ class Nutzungsart(Enum):
     FREIZEIT = 59
 
 
-class EmpfohleneNutzung(Enum):
+class EmpfohleneNutzung(int, Enum):
     """Recommended usage."""
 
     ACKERLAND = 1
@@ -210,7 +210,7 @@ class EmpfohleneNutzung(Enum):
     WALD = 26
 
 
-class BebaubarNach(Enum):
+class BebaubarNach(str, Enum):
     """Construction constraints."""
 
     UNBEKANNT = 'U'
@@ -219,7 +219,7 @@ class BebaubarNach(Enum):
     AUSSENGEBIET = 'A'
 
 
-class Objektzustand(Enum):
+class Objektzustand(int, Enum):
     """Object state."""
 
     KEINE_ANGABE = 0
@@ -236,7 +236,7 @@ class Objektzustand(Enum):
     ABBRUCHREIF = 11
 
 
-class Heizungsart(Enum):
+class Heizungsart(int, Enum):
     """Heating type.
 
     Does not apply to WAZ.
@@ -248,7 +248,7 @@ class Heizungsart(Enum):
     ZENTRALHEIZUNG = 5
 
 
-class Bodenbelag(Enum):
+class Bodenbelag(int, Enum):
     """Flooring material."""
 
     KEINE_ANGABE = 0
@@ -266,7 +266,7 @@ class Bodenbelag(Enum):
     OHNE_BODENBELAG = 12
 
 
-class Haustiere(Enum):
+class Haustiere(str, Enum):
     """Pets allowed type."""
 
     JA = 'J'
@@ -274,7 +274,7 @@ class Haustiere(Enum):
     NACH_VEREINBARUNG = 'V'
 
 
-class Erschliessung(Enum):
+class Erschliessung(str, Enum):
     """Development."""
 
     ERSCHLOSSEN = 'E'
@@ -282,7 +282,7 @@ class Erschliessung(Enum):
     UNERSCHLOSSEN = 'U'
 
 
-class Lageart(Enum):
+class Lageart(int, Enum):
     """Location type."""
 
     KEINE_ANGABE = 0
@@ -291,7 +291,7 @@ class Lageart(Enum):
     EINKAUFSZENTRUM = 3
 
 
-class Zulieferung(Enum):
+class Zulieferung(int, Enum):
     """Delivery type."""
 
     KEINE_ANGABE = 0
@@ -304,14 +304,14 @@ class Zulieferung(Enum):
     VORMITTAGS = 7
 
 
-class Geschlecht(Enum):
+class Geschlecht(int, Enum):
     """Gender."""
 
     NUR_MAENNER = 0
     NUR_FRAUEN = 1
 
 
-class ParkplatzStellplatz(Enum):
+class ParkplatzStellplatz(int, Enum):
     """Parking."""
 
     KEINE_ANGABE = 1
@@ -323,7 +323,7 @@ class ParkplatzStellplatz(Enum):
     TIEFGARAGE = 7
 
 
-class Bauphase(Enum):
+class Bauphase(int, Enum):
     """Construction stage."""
 
     KEINE_ANGABE = 1
@@ -332,7 +332,7 @@ class Bauphase(Enum):
     HAUS_FERTIG_GESTELLT = 4
 
 
-class Befeuerungsart(Enum):
+class Befeuerungsart(int, Enum):
     """Firing type."""
 
     KEINE_ANGABE = 1
@@ -346,7 +346,7 @@ class Befeuerungsart(Enum):
     KOHLE = 9
 
 
-class Energieausweistyp(Enum):
+class Energieausweistyp(int, Enum):
     """Energy certificate type."""
 
     KEINE_ANGABE = 1
@@ -354,7 +354,7 @@ class Energieausweistyp(Enum):
     ENERGIEVERBRAUCHSKENNWERT = 3
 
 
-class Ausstattungsqualitaet(Enum):
+class Ausstattungsqualitaet(int, Enum):
     """Quality of amenities."""
 
     KEINE_ANGABE = 1
