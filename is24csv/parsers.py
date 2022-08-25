@@ -2,7 +2,7 @@
 
 from datetime import datetime
 from enum import Enum
-from typing import Any, Callable, Optional, Type
+from typing import Any, Callable, Optional, Type, TypeVar
 
 
 __all__ = [
@@ -12,6 +12,9 @@ __all__ = [
     'parse_float',
     'parse_int'
 ]
+
+
+AnyEnum = TypeVar('AnyEnum', bound=Enum)
 
 
 def parse_bool(
@@ -54,12 +57,12 @@ def parse_date(
 
 
 def parse_enum(
-        enum: Type[Enum],
+        enum: Type[AnyEnum],
         value: str,
         *,
         preprocess: Optional[Callable] = None,
         default: Any = None
-) -> Enum:
+) -> AnyEnum:
     """Parser factory to parse a string,
     for the respective enumeration type.
     """
