@@ -15,5 +15,5 @@ setup(
     maintainer='Richard Neumann',
     maintainer_email='r.neumann@homeinfo.de',
     packages=['is24csv'],
-    description=('Immobilienscout24 legacy CSV library.')
+    description='Immobilienscout24 legacy CSV library.'
 )
