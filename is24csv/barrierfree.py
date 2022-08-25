@@ -6,7 +6,7 @@ from is24csv.record import IS24Record
 __all__ = ['BarrierFreeRecord']
 
 
-class BarrierFreeRecord(IS24Record, columns=210):   # pylint: disable=R0904
+class BarrierFreeRecord(IS24Record, columns=210):
     """Extended record with barrier freeness details.
     Properties are partially documented in German.
     """
@@ -49,7 +49,7 @@ class BarrierFreeRecord(IS24Record, columns=210):   # pylint: disable=R0904
     @property
     def grosse_aufzugkabine(self):
         """Determines whether the lift cabin is large."""
-        # Kabinengröße ab 90 x 140 cm Innenmaß  (nach DIN-Norm)
+        # Kabinengröße ab 90 x 140 cm Innenmaß (nach DIN-Norm)
         if self[187] == '25C':
             return True
 

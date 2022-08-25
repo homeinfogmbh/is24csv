@@ -1,8 +1,8 @@
 """Data parsing functions."""
 
 from datetime import datetime
-from enum import Enum, EnumMeta
-from typing import Any, Callable, Optional
+from enum import Enum
+from typing import Any, Callable, Optional, Type
 
 
 __all__ = [
@@ -14,8 +14,13 @@ __all__ = [
 ]
 
 
-def parse_bool(string: str, *, true: str = 'J', false: str = 'N',
-               default: Any = None) -> Optional[bool]:
+def parse_bool(
+        string: str,
+        *,
+        true: str = 'J',
+        false: str = 'N',
+        default: Any = None
+) -> Optional[bool]:
     """Derives a boolean value from string if string
     is present or else returns None as not applicable.
     """
@@ -29,8 +34,12 @@ def parse_bool(string: str, *, true: str = 'J', false: str = 'N',
     return default
 
 
-def parse_date(string: str, *, frmt: str = '%d.%m.%Y',
-               default: Any = None) -> Optional[datetime]:
+def parse_date(
+        string: str,
+        *,
+        frmt: str = '%d.%m.%Y',
+        default: Any = None
+) -> Optional[datetime]:
     """Derives a date value from string if
     string is present or else returns None.
     """
@@ -44,9 +53,13 @@ def parse_date(string: str, *, frmt: str = '%d.%m.%Y',
         return default
 
 
-def parse_enum(enum: EnumMeta, value: str, *,
-               preprocess: Optional[Callable] = None,
-               default: Any = None) -> Enum:
+def parse_enum(
+        enum: Type[Enum],
+        value: str,
+        *,
+        preprocess: Optional[Callable] = None,
+        default: Any = None
+) -> Enum:
     """Parser factory to parse a string,
     for the respective enumeration type.
     """

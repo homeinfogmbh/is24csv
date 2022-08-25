@@ -24,13 +24,20 @@ class CSVRecord(tuple):
         if (length := len(self)) != self.columns:
             raise InvalidRecord(length, self.columns)
 
-    def __init_subclass__(cls, *, grpsep: str = ';', columns: int):
+    def __init_subclass__(
+            cls,
+            *args,
+            grpsep: str = ';',
+            columns: int,
+            **kwargs
+    ):
         """Sets column count and group separator."""
+        super().__init_subclass__(*args, **kwargs)
         cls.grpsep = grpsep
         cls.columns = columns
 
 
-class IS24Record(CSVRecord, columns=182):   # pylint: disable=R0904
+class IS24Record(CSVRecord, columns=182):
     """A single line of an IS24 CSV file."""
 
     def __str__(self):
@@ -294,8 +301,12 @@ class IS24Record(CSVRecord, columns=182):   # pylint: disable=R0904
             title = self[index+4]
             yield Attachment(title, filename, suffix, filetype, playtime)
 
-    def map(self, type_index_map: dict[Immobilienart, int], *,
-            default: Any = None) -> Any:
+    def map(
+            self,
+            type_index_map: dict[Immobilienart, int],
+            *,
+            default: Any = None
+    ) -> Any:
         """Takes a real estate type → index map and returns the
         respective value for the current real estate type.
         """

@@ -45,11 +45,13 @@ class CSVFile(tuple):
     """An IS24 CSV file."""
 
     @classmethod
-    def read(cls,
-             filename: Path, *,
-             encoding: str = 'latin-1',
-             delimiter: str = '|'
-        ) -> CSVFile:
+    def read(
+            cls,
+            filename: Path,
+            *,
+            encoding: str = 'latin-1',
+            delimiter: str = '|'
+    ) -> CSVFile:
         """Reads in a file."""
         with filename.open(mode='r', encoding=encoding, newline='') as file:
             return cls(lines_to_records(reader(file, delimiter=delimiter)))

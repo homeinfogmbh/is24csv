@@ -55,7 +55,7 @@ VERMARKTUNGSART = {
     Immobilienart.SONSTIGE_OBJEKTE: 60
 }
 OBJEKTART = {
-    Immobilienart.GARAGE_STELLPLATZ_MIETE:60,
+    Immobilienart.GARAGE_STELLPLATZ_MIETE: 60,
     Immobilienart.GARAGE_STELLPLATZ_KAUF: 60
 }
 WOHNFLAECHE = {
@@ -345,7 +345,7 @@ LASTENAUFZUG_TRAGKRAFT = {
 }
 PARKPLATZ_STELLPLATZ = {
     Immobilienart.WOHNUNG_MIETE: 78,
-    Immobilienart.HAUS_MIETE:74,
+    Immobilienart.HAUS_MIETE: 74,
     Immobilienart.WOHNUNG_KAUF: 77,
     Immobilienart.HAUS_KAUF: 73,
     Immobilienart.WAZ: 79
@@ -724,14 +724,16 @@ ATTRIBUTES = {
 }
 TYPES = {
     'objektkategorie_2': partial(
-        parse_enum, Objektkategorie2, preprocess=parse_int),
+        parse_enum, Objektkategorie2, preprocess=parse_int
+    ),
     'wohnraumart': partial(parse_enum, Wohnraumart, preprocess=parse_int),
     'vermarktungsart': partial(parse_enum, Vermarktungsart),
     'objektart': partial(parse_enum, Objektart, preprocess=parse_int),
     'wohnflaeche': parse_float,
     'nutzungsart': partial(
         parse_enum, Nutzungsart, preprocess=parse_int,
-        default=Nutzungsart.WOHNEN),
+        default=Nutzungsart.WOHNEN
+    ),
     'laenge': parse_float,
     'nutzflaeche': parse_float,
     'verkaufsflaeche': parse_float,
@@ -749,14 +751,16 @@ TYPES = {
     'badezimmer': parse_int,
     'mindestmietdauer': parse_float,
     'empfohlene_nutzung': partial(
-        parse_enum, EmpfohleneNutzung, preprocess=parse_int),
+        parse_enum, EmpfohleneNutzung, preprocess=parse_int
+    ),
     'gesamtflaeche': parse_float,
     'gewerbeflaechen': parse_float,
     'flaeche': parse_float,
     'etage': parse_int,
     'grundstuecksflaeche': parse_float,
     'bebaubar_nach': partial(
-        parse_enum, BebaubarNach, default=BebaubarNach.UNBEKANNT),
+        parse_enum, BebaubarNach, default=BebaubarNach.UNBEKANNT
+    ),
     'etagenzahl': parse_int,
     'erbpacht_jahre': parse_int,
     'parkflaechen': parse_int,
@@ -765,17 +769,20 @@ TYPES = {
     'baugenehmigung_vorhanden': parse_bool,
     'objektzustand': partial(
         parse_enum, Objektzustand, preprocess=parse_int,
-        default=Objektzustand.KEINE_ANGABE),
+        default=Objektzustand.KEINE_ANGABE
+    ),
     'abriss_erforderlich': parse_bool,
     'heizungsart': partial(
         parse_enum, Heizungsart, preprocess=parse_int,
-        default=Heizungsart.KEINE_ANGABE),
+        default=Heizungsart.KEINE_ANGABE
+    ),
     'grz': parse_float,
     'aufzug': parse_bool,
     'gfz': parse_float,
     'bodenbelag': partial(
         parse_enum, Bodenbelag, preprocess=parse_int,
-        default=Bodenbelag.KEINE_ANGABE),
+        default=Bodenbelag.KEINE_ANGABE
+    ),
     'plaetze_gastraum': parse_int,
     'haustiere': partial(parse_enum, Haustiere),
     'erschliessung': partial(parse_enum, Erschliessung),
@@ -792,7 +799,8 @@ TYPES = {
     'dv_verkabelung': parse_bool,
     'lageart': partial(
         parse_enum, Lageart, preprocess=parse_int,
-        default=Lageart.KEINE_ANGABE),
+        default=Lageart.KEINE_ANGABE
+    ),
     'hallenhoehe': parse_float,
     'mieteinnahmen_soll': parse_float,
     'einbaukueche': parse_bool,
@@ -804,7 +812,8 @@ TYPES = {
     'fahrzeit_hbf': parse_int,
     'zulieferung': partial(
         parse_enum, Zulieferung, preprocess=parse_int,
-        default=Zulieferung.KEINE_ANGABE),
+        default=Zulieferung.KEINE_ANGABE
+    ),
     'bodenbelastung': parse_float,
     'foerderung': parse_bool,
     'vermietet': parse_bool,
@@ -817,7 +826,8 @@ TYPES = {
     'lastenaufzug_tragkraft': parse_float,
     'parkplatz_stellplatz': partial(
         parse_enum, ParkplatzStellplatz, preprocess=parse_int,
-        default=ParkplatzStellplatz.KEINE_ANGABE),
+        default=ParkplatzStellplatz.KEINE_ANGABE
+    ),
     'frei_ab': lambda string: parse_date(string, default=string),
     'klimaanlage': parse_bool,
     'rollstuhlgerecht': parse_bool,
@@ -831,13 +841,16 @@ TYPES = {
     'barrierefrei': parse_bool,
     'bauphase': partial(
         parse_enum, Bauphase, preprocess=parse_int,
-        default=Bauphase.KEINE_ANGABE),
+        default=Bauphase.KEINE_ANGABE
+    ),
     'befeuerungsart': partial(
         parse_enum, Befeuerungsart, preprocess=parse_int,
-        default=Befeuerungsart.KEINE_ANGABE),
+        default=Befeuerungsart.KEINE_ANGABE
+    ),
     'energieausweistyp': partial(
         parse_enum, Energieausweistyp, preprocess=parse_int,
-        default=Energieausweistyp.KEINE_ANGABE),
+        default=Energieausweistyp.KEINE_ANGABE
+    ),
     'kennwert': parse_float,
     'energieverbrauch_mitwarmwasser': parse_bool,
     'gaeste_wc': parse_bool,
@@ -865,6 +878,7 @@ TYPES = {
     'heizkosten_in_nebenkosten': parse_bool,
     'ausstattungsqualitaet': partial(
         parse_enum, Ausstattungsqualitaet, preprocess=parse_int,
-        default=Ausstattungsqualitaet.KEINE_ANGABE),
+        default=Ausstattungsqualitaet.KEINE_ANGABE
+    ),
     'deckenlast': parse_float
 }
