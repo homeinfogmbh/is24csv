@@ -4,27 +4,27 @@ from enum import Enum
 
 
 __all__ = [
-    'Immobilienart',
-    'Objektkategorie2',
-    'Wohnraumart',
-    'Vermarktungsart',
-    'Objektart',
-    'Nutzungsart',
-    'EmpfohleneNutzung',
-    'BebaubarNach',
-    'Objektzustand',
-    'Heizungsart',
-    'Bodenbelag',
-    'Haustiere',
-    'Erschliessung',
-    'Lageart',
-    'Zulieferung',
-    'Geschlecht',
-    'ParkplatzStellplatz',
-    'Bauphase',
-    'Befeuerungsart',
-    'Energieausweistyp',
-    'Ausstattungsqualitaet'
+    "Immobilienart",
+    "Objektkategorie2",
+    "Wohnraumart",
+    "Vermarktungsart",
+    "Objektart",
+    "Nutzungsart",
+    "EmpfohleneNutzung",
+    "BebaubarNach",
+    "Objektzustand",
+    "Heizungsart",
+    "Bodenbelag",
+    "Haustiere",
+    "Erschliessung",
+    "Lageart",
+    "Zulieferung",
+    "Geschlecht",
+    "ParkplatzStellplatz",
+    "Bauphase",
+    "Befeuerungsart",
+    "Energieausweistyp",
+    "Ausstattungsqualitaet",
 ]
 
 
@@ -152,10 +152,10 @@ class Wohnraumart(int, Enum):
 class Vermarktungsart(str, Enum):
     """Marketing types."""
 
-    KAUF = 'K'
-    ERBPACHT = 'E'
-    MIETE = 'M'
-    PACHT = 'P'
+    KAUF = "K"
+    ERBPACHT = "E"
+    MIETE = "M"
+    PACHT = "P"
 
 
 class Objektart(int, Enum):
@@ -213,10 +213,10 @@ class EmpfohleneNutzung(int, Enum):
 class BebaubarNach(str, Enum):
     """Construction constraints."""
 
-    UNBEKANNT = 'U'
-    BEBAUUNGSPLAN = 'B'
-    NACHBARBEBAUUNG = 'N'
-    AUSSENGEBIET = 'A'
+    UNBEKANNT = "U"
+    BEBAUUNGSPLAN = "B"
+    NACHBARBEBAUUNG = "N"
+    AUSSENGEBIET = "A"
 
 
 class Objektzustand(int, Enum):
@@ -269,17 +269,17 @@ class Bodenbelag(int, Enum):
 class Haustiere(str, Enum):
     """Pets allowed type."""
 
-    JA = 'J'
-    NEIN = 'N'
-    NACH_VEREINBARUNG = 'V'
+    JA = "J"
+    NEIN = "N"
+    NACH_VEREINBARUNG = "V"
 
 
 class Erschliessung(str, Enum):
     """Development."""
 
-    ERSCHLOSSEN = 'E'
-    TEILERSCHLOSSEN = 'T'
-    UNERSCHLOSSEN = 'U'
+    ERSCHLOSSEN = "E"
+    TEILERSCHLOSSEN = "T"
+    UNERSCHLOSSEN = "U"
 
 
 class Lageart(int, Enum):

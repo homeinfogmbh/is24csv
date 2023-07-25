@@ -11,7 +11,7 @@ from is24csv.parsers import parse_enum
 from is24csv.parsers import parse_int
 
 
-__all__ = ['CSVRecord', 'IS24Record']
+__all__ = ["CSVRecord", "IS24Record"]
 
 
 class CSVRecord(tuple):
@@ -24,7 +24,7 @@ class CSVRecord(tuple):
         if (length := len(self)) != self.columns:
             raise InvalidRecord(length, self.columns)
 
-    def __init_subclass__(cls, *, grpsep: str = ';', columns: int):
+    def __init_subclass__(cls, *, grpsep: str = ";", columns: int):
         """Sets column count and group separator."""
         cls.grpsep = grpsep
         cls.columns = columns
@@ -59,7 +59,7 @@ class IS24Record(CSVRecord, columns=182):
     @property
     def status(self) -> bool:
         """The object's status."""
-        return self[1] != '0'
+        return self[1] != "0"
 
     @property
     def immobilienart(self) -> Immobilienart:
@@ -169,7 +169,7 @@ class IS24Record(CSVRecord, columns=182):
     @property
     def kontaktperson_laenderkennzeichen(self) -> str:
         """Country code."""
-        return self[23] or 'DEU'
+        return self[23] or "DEU"
 
     @property
     def telefon(self) -> str:
@@ -200,7 +200,7 @@ class IS24Record(CSVRecord, columns=182):
     @property
     def adressdruck(self) -> bool:
         """Show address flag."""
-        return self[35] == 'J'
+        return self[35] == "J"
 
     @property
     def ueberschrift(self) -> str:
@@ -215,12 +215,12 @@ class IS24Record(CSVRecord, columns=182):
     @property
     def waehrung(self) -> str:
         """Currency."""
-        return self[38] or 'EUR'
+        return self[38] or "EUR"
 
     @property
     def provisionspflichtig(self) -> bool:
         """Subject to commission flag."""
-        return self[39] == 'J'
+        return self[39] == "J"
 
     @property
     def provisionshinweis(self) -> str:
@@ -288,17 +288,14 @@ class IS24Record(CSVRecord, columns=182):
             if not filename:
                 continue
 
-            suffix = self[index+1]
-            filetype = self[index+2]
-            playtime = parse_int(self[index+3])
-            title = self[index+4]
+            suffix = self[index + 1]
+            filetype = self[index + 2]
+            playtime = parse_int(self[index + 3])
+            title = self[index + 4]
             yield Attachment(title, filename, suffix, filetype, playtime)
 
     def map(
-            self,
-            type_index_map: dict[Immobilienart, int],
-            *,
-            default: Any = None
+        self, type_index_map: dict[Immobilienart, int], *, default: Any = None
     ) -> Any:
         """Takes a real estate type → index map and returns the
         respective value for the current real estate type.

@@ -3,7 +3,7 @@
 from typing import NamedTuple
 
 
-__all__ = ['Attachment']
+__all__ = ["Attachment"]
 
 
 class Attachment(NamedTuple):

@@ -5,24 +5,14 @@ from enum import Enum
 from typing import Any, Callable, Optional, Type, TypeVar
 
 
-__all__ = [
-    'parse_bool',
-    'parse_date',
-    'parse_enum',
-    'parse_float',
-    'parse_int'
-]
+__all__ = ["parse_bool", "parse_date", "parse_enum", "parse_float", "parse_int"]
 
 
-AnyEnum = TypeVar('AnyEnum', bound=Enum)
+AnyEnum = TypeVar("AnyEnum", bound=Enum)
 
 
 def parse_bool(
-        string: str,
-        *,
-        true: str = 'J',
-        false: str = 'N',
-        default: Any = None
+    string: str, *, true: str = "J", false: str = "N", default: Any = None
 ) -> Optional[bool]:
     """Derives a boolean value from string if string
     is present or else returns None as not applicable.
@@ -38,10 +28,7 @@ def parse_bool(
 
 
 def parse_date(
-        string: str,
-        *,
-        frmt: str = '%d.%m.%Y',
-        default: Any = None
+    string: str, *, frmt: str = "%d.%m.%Y", default: Any = None
 ) -> Optional[datetime]:
     """Derives a date value from string if
     string is present or else returns None.
@@ -57,11 +44,11 @@ def parse_date(
 
 
 def parse_enum(
-        enum: Type[AnyEnum],
-        value: str,
-        *,
-        preprocess: Optional[Callable] = None,
-        default: Any = None
+    enum: Type[AnyEnum],
+    value: str,
+    *,
+    preprocess: Optional[Callable] = None,
+    default: Any = None
 ) -> AnyEnum:
     """Parser factory to parse a string,
     for the respective enumeration type.
@@ -89,7 +76,7 @@ def parse_float(string: str, *, default: Any = None) -> Optional[float]:
         return default
 
     try:
-        return float(string.replace(',', '.'))
+        return float(string.replace(",", "."))
     except ValueError:
         return default
 

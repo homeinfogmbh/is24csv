@@ -1,7 +1,7 @@
 """CSV exceptions."""
 
 
-__all__ = ['InvalidRecord']
+__all__ = ["InvalidRecord"]
 
 
 class InvalidRecord(Exception):
@@ -15,5 +15,4 @@ class InvalidRecord(Exception):
 
     def __str__(self):
         """Returns a human readable string."""
-        return f'Expected {self.length_shall} columns' \
-            f', but got {self.length_is}.'
+        return f"Expected {self.length_shall} columns" f", but got {self.length_is}."
